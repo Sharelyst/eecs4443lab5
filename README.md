@@ -4,8 +4,8 @@
 - Ease of list creation: Our experience while doing this was much easier with Flutter than with Android. Less code was needed for ListView.builder as opposed to Android's RecyclerView.
 - Navigation and data passing: It was much simpler to do this in Flutter than in Android. Using the Navigator.push() was easy to use when we wanted to send data between screens.
 - UI layout complexity: It was much more flexible in Flutter than in Android when trying to adjust the layouts. Managing cards, padding, and columns was much easier to do in Flutter. Also, the app works very well in all screen sizes.
-- Boilerplate requirements: In Flutter, we noticed that we needed fewer files as opposed to Android, where we needed more files.
-- Performance and responsiveness: When we tried scrolling on Flutter, it was much smoother and more responsive compared to Android. We also noticed that screen transitions were much more responsive and smoother compared to Android. 
+- Boilerplate requirements: In Flutter, we noticed that we needed fewer files as opposed to Android. In Android, we needed more files.
+- Performance and responsiveness: When we tried scrolling on Flutter, it was much smoother and more responsive when we compared it to Android. We also noticed the same when transitioning between screens.
 
 ### Group Members & Roles:
 - Stefewn Johnson (Flutter UI Developer)
