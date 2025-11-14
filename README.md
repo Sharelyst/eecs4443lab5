@@ -1,16 +1,19 @@
-# eecs4443lab5
+# EECS4443Lab5
 
-A new Flutter project.
+### Post-Lab Reflection:
+-
 
-## Getting Started
+### Group Members & Roles:
+- Stefewn Johnson (Flutter UI Developer)
+- Muhammmad Zamin (Data & Navigation Developer)
+- Daniel Chahine (Detail Screen Developer)
+- Yuriy Kotyashko (Styling & Layout Developer)
 
-This project is a starting point for a Flutter application.
+### Group Member Contributions:
+- Stefewn Johnson (Worked on list_screen.dart & main.dart)
+- Muhammmad Zamin (Worked on item_model.dart & list_screen.dart)
+- Daniel Chahine (Worked on detail_screen.dart & item_card.dart)
+- Yuriy Kotyashko (Worked on item_card.dart & main.dart)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Known Issues or Incomplete Parts:
+- None
