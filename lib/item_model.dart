@@ -1,9 +1,10 @@
+// Making object class Item with Item properties
 class Item {
   final String title;
   final String imageUrl;
   final String description;
   final String summary;
-
+  // Initializing Item with default values
   const Item({
     this.title = "",
     this.imageUrl = "",
@@ -12,14 +13,18 @@ class Item {
   });
 }
 
+// creating our 15 hardcoded items
 final List<Item> sampleItems = [
+  // first item, banana
   Item(
     title: "Banana",
+    // picture of banana from getting image url from web
     imageUrl:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banana-Single.jpg/1162px-Banana-Single.jpg",
     description: "Just a Banana, nothing else.",
     summary: "Banana summary",
   ),
+  // second item
   Item(
     title: "Apple",
     imageUrl:
@@ -27,6 +32,7 @@ final List<Item> sampleItems = [
     description: "Just an apple, nothing else.",
     summary: "Apple summary",
   ),
+  // third item
   Item(
     title: "Orange",
     imageUrl:
@@ -34,6 +40,7 @@ final List<Item> sampleItems = [
     description: "Just an Orange, nothing else.",
     summary: "Orange summary",
   ),
+  // fourth item
   Item(
     title: "Pineapple",
     imageUrl:
@@ -41,6 +48,7 @@ final List<Item> sampleItems = [
     description: "Just a Pineapple, nothing else.",
     summary: "Pineapple summary",
   ),
+  // fifth item
   Item(
     title: "Tomato",
     imageUrl:
@@ -52,6 +60,7 @@ final List<Item> sampleItems = [
         "Just a tomato, nothing else. Just a tomato, nothing else.",
     summary: "Tomato summary",
   ),
+  // sixth item
   Item(
     title: "Something",
     imageUrl:
@@ -59,12 +68,14 @@ final List<Item> sampleItems = [
     description: "Out of ideas already.",
     summary: "Something summary",
   ),
+  // seventh item
   Item(
     title: "Pencils",
     description:
         "Why is there an image of a pencil here you ask? Well, there isn't",
     summary: "Pencils summary",
   ),
+  // eighth item
   Item(
     title: "Sky",
     imageUrl:
@@ -72,12 +83,14 @@ final List<Item> sampleItems = [
     description: "Blue sky.",
     summary: "Sky summary",
   ),
+  // ninth item
   Item(
     title: "Clouds",
     description:
         "This cloud is very cool (just imagine there is a cloud here and not a placeholder image).",
     summary: "Clouds summary",
   ),
+  // tenth item
   Item(
     title: "Grass",
     imageUrl:
@@ -85,6 +98,7 @@ final List<Item> sampleItems = [
     description: "Please touch some grass...",
     summary: "Grass summary",
   ),
+  // item 11
   Item(
     title: "River",
     imageUrl:
@@ -92,6 +106,7 @@ final List<Item> sampleItems = [
     description: "river....",
     summary: "River summary",
   ),
+  // item 12
   Item(
     title: "Grapes",
     imageUrl:
@@ -99,6 +114,7 @@ final List<Item> sampleItems = [
     description: "I guess we going back to fruits now.",
     summary: "Grapes summary",
   ),
+  // item 13
   Item(
     title: "Mango",
     imageUrl:
@@ -106,7 +122,8 @@ final List<Item> sampleItems = [
     description: "Best fruit after lemons.",
     summary: "Mango summary",
   ),
-
+  // item 14
   Item(imageUrl: "https://scx2.b-cdn.net/gfx/news/2017/theoreticala.jpg"),
+  // item 15
   Item(),
 ];
