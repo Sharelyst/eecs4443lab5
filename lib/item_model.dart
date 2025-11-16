@@ -17,123 +17,95 @@ class Item {
 /// These can represent anything (e.g., places, books, courses, etc.).
 const List<Item> sampleItems = [
   Item(
-    title: 'Flutter Basics',
+    title: 'Banana',
     imageUrl: 'https://picsum.photos/seed/flutter1/400/300',
-    summary: 'Learn how Flutter builds UIs using widgets and trees.',
+    summary: 'Eat a Banana',
     description:
-        'Flutter is Google’s UI toolkit for building beautiful, natively compiled '
-        'applications for mobile, web, and desktop from a single codebase. '
-        'In this topic we cover the basic widget tree, hot reload, and how to structure '
-        'a simple app using MaterialApp, Scaffold, and common widgets.',
+        'Just a Banana, nothing else.',
   ),
   Item(
-    title: 'State Management',
+    title: 'Apple',
     imageUrl: 'https://picsum.photos/seed/state2/400/300',
-    summary: 'Understand how widgets store and update state.',
+    summary: 'Eat a Apple',
     description:
-        'State management in Flutter refers to how you store and update data that affects '
-        'your UI. You will learn the difference between StatelessWidget and StatefulWidget, '
-        'when to rebuild parts of the tree, and how setState triggers UI updates.',
+        'Just an apple, nothing else.',
   ),
   Item(
-    title: 'Navigation & Routes',
+    title: 'Orange',
     imageUrl: 'https://picsum.photos/seed/nav3/400/300',
-    summary: 'Use Navigator.push and Navigator.pop for screen transitions.',
+    summary: 'Eat a Orange',
     description:
-        'Flutter’s Navigator API lets you build stacks of screens (routes) and move between '
-        'them. Using Navigator.push, you can go to a new screen and pass arguments such as '
-        'an Item object. Using Navigator.pop, you can return to the previous screen, giving '
-        'users a natural navigation flow.',
+        'Just an Orange, nothing else.',
   ),
   Item(
-    title: 'ListView.builder',
+    title: 'Pineapple',
     imageUrl: 'https://picsum.photos/seed/list4/400/300',
-    summary: 'Efficiently render long, scrollable lists.',
+    summary: 'Eat a Pineapple',
     description:
-        'ListView.builder is a powerful way to build large or infinite scrolling lists lazily. '
-        'It only builds the visible children, which improves performance. You provide an itemCount '
-        'and an itemBuilder to describe how each row should look.',
+        'Just a Pineapple, nothing else.',
   ),
   Item(
-    title: 'Cards & Layout',
+    title: 'Tomato',
     imageUrl: 'https://picsum.photos/seed/card5/400/300',
-    summary: 'Organize visual information using Card, Row, and Column.',
+    summary: 'Eat a Tomato',
     description:
-        'Cards are used to group related content together with a slight elevation and rounded '
-        'corners. Combined with Row, Column, Padding, and SizedBox, you can design clean, '
-        'readable UI sections that adapt to different screen sizes.',
+        'Testing long strings: Just a tomato, nothing else. Just a tomato, nothing else. Just a tomato, nothing else. Just a tomato, nothing else. Just a tomato, nothing else. Just a tomato, nothing else. Just a tomato, nothing else. Just a tomato, nothing else. Just a tomato, nothing else. Just a tomato, nothing else.',
   ),
   Item(
-    title: 'Images in Flutter',
+    title: 'Something',
     imageUrl: 'https://picsum.photos/seed/image6/400/300',
-    summary: 'Display images from the network with graceful error handling.',
+    summary: 'Something we need for everyday live',
     description:
-        'Flutter can display images from assets and from the network. Using Image.network, '
-        'you can load remote images. It is good practice to provide an errorBuilder to show '
-        'a placeholder icon if the image fails to load.',
+        'Out of ideas already.',
   ),
   Item(
-    title: 'Responsive Design',
+    title: 'Pencils',
     imageUrl: 'https://picsum.photos/seed/responsive7/400/300',
-    summary: 'Make your UI work in portrait and landscape.',
+    summary: 'Need Pencils to write on paper',
     description:
-        'Responsive design means your layout adapts to different screen sizes and orientations. '
-        'Using Flexible, Expanded, LayoutBuilder, and MediaQuery, you can keep your UI usable and '
-        'readable on phones and tablets, in portrait or landscape.',
+        'why is there an image of a pencil here you ask? Well, first of all, there is not, and secondly, I dont know.',
   ),
   Item(
-    title: 'Theming & Styles',
+    title: 'Sky',
     imageUrl: 'https://picsum.photos/seed/theme8/400/300',
-    summary: 'Use ThemeData and TextTheme for consistency.',
+    summary: 'The Sky is so nice to see',
     description:
-        'Theming allows you to define global styles such as colors, fonts, and text sizes. '
-        'By using Theme.of(context) and TextTheme, your app stays visually consistent and easier '
-        'to maintain, even as it grows.',
+        'Blue sky.',
   ),
   Item(
-    title: 'Input & Gestures',
+    title: 'Clouds',
     imageUrl: 'https://picsum.photos/seed/gestures9/400/300',
-    summary: 'Handle taps and gestures with InkWell and GestureDetector.',
+    summary: 'A wonderful sight to see Clouds',
     description:
-        'User interaction is a key part of mobile apps. Flutter provides InkWell and GestureDetector '
-        'for listening to taps, long presses, and more. Wrapping your widgets with these makes '
-        'them interactive and provides visual feedback like ripples.',
+        'This cloud is very cool (just imagine there is a cloud here and not a placeholder image).',
   ),
   Item(
-    title: 'Forms & Validation',
+    title: 'Grass',
     imageUrl: 'https://picsum.photos/seed/forms10/400/300',
-    summary: 'Collect and validate user input with Form widgets.',
+    summary: 'Grass is green',
     description:
-        'Flutter forms use Form, TextFormField, and validation functions to collect user input '
-        'safely. Validation ensures users provide correct data before proceeding, which improves '
-        'the overall user experience and reduces errors.',
+        'Please touch some grass...',
   ),
   Item(
-    title: 'Networking Basics',
+    title: 'River',
     imageUrl: 'https://picsum.photos/seed/network11/400/300',
-    summary: 'Fetch data from APIs using http or other packages.',
+    summary: 'River provides water',
     description:
-        'Networking in Flutter often uses the http package to send GET or POST requests. '
-        'You parse JSON responses into Dart models and then rebuild widgets with the new data. '
-        'Although this lab uses hardcoded data, the same model structure can be reused for APIs.',
+        'river....',
   ),
   Item(
-    title: 'Performance Tips',
+    title: 'Grapes',
     imageUrl: 'https://picsum.photos/seed/perf12/400/300',
-    summary: 'Use const constructors and avoid unnecessary rebuilds.',
+    summary: 'Grapes to eat',
     description:
-        'Performance optimization in Flutter includes using const constructors where possible, '
-        'avoiding expensive work in build methods, and using efficient widgets like ListView.builder. '
-        'Profiling tools can also help identify bottlenecks.',
+        'I guess we going back to fruits now.',
   ),
   Item(
-    title: 'Accessibility',
+    title: 'Mango',
     imageUrl: 'https://picsum.photos/seed/access13/400/300',
-    summary: 'Make apps usable by everyone, including screen readers.',
+    summary: 'Mango to eat',
     description:
-        'Accessibility involves adding semantic labels, proper contrast, and meaningful navigation. '
-        'Flutter supports screen readers and other assistive technologies, helping you build apps that '
-        'are inclusive for more users.',
+        'Best fruit after lemons.',
   ),
   Item(
     title: 'Animations',
