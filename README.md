@@ -16,8 +16,8 @@
 ### Group Member Contributions:
 - Stefewn Johnson (Worked on list_screen.dart & main.dart)
 - Muhammmad Zamin (Worked on item_model.dart & list_screen.dart)
-- Daniel Chahine (Worked on detail_screen.dart & item_card.dart)
-- Yuriy Kotyashko (Worked on item_card.dart & main.dart)
+- Daniel Chahine (Worked on detail_screen.dart & main.dart)
+- Yuriy Kotyashko (Worked on list_screen.dart & main.dart)
 
 ### Known Issues or Incomplete Parts:
 - None
