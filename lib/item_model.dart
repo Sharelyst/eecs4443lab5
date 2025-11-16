@@ -38,7 +38,7 @@ final List<Item> sampleItems = [
     imageUrl:
         "https://media.istockphoto.com/id/185284489/photo/orange.jpg?s=612x612&w=0&k=20&c=m4EXknC74i2aYWCbjxbzZ6EtRaJkdSJNtekh4m1PspE=",
     description: "Just an Orange, nothing else.",
-    summary: "Orange summary",
+    summary: "",
   ),
   // fourth item
   Item(

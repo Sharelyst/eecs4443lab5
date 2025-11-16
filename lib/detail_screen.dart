@@ -8,47 +8,58 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final safeTitle = item.title.isEmpty ? "No title available" : item.title;
-    final safeDescription = item.description.isEmpty
+    // handle empty text and assign them to a variable to be displayed
+    final title = item.title.isEmpty ? "No title available" : item.title;
+    final description = item.description.isEmpty
         ? "No description available."
         : item.description;
 
     return Scaffold(
-      appBar: AppBar(title: Text(safeTitle, overflow: TextOverflow.ellipsis)),
+      // title bar, handles overflow too.
+      appBar: AppBar(title: Text(title, overflow: TextOverflow.ellipsis)),
 
+      // create the layout
       body: LayoutBuilder(
         builder: (context, constraints) {
+          // check if the phone is in landscape or portrait
           final bool isLandscape = constraints.maxWidth > constraints.maxHeight;
 
+          // if portrait then display items in vertical list or column
           if (!isLandscape) {
+            // can scroll if too much content
             return SingleChildScrollView(
               padding: const EdgeInsets.all(12),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
+                    // create the box to store the image
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(0),
+                      // fetch image from network
                       child: Image.network(
                         item.imageUrl ?? "",
                         width: constraints.maxWidth * 0.9,
                         height: constraints.maxWidth * 0.9,
                         fit: BoxFit.contain,
+                        // handle null images
                         errorBuilder: (_, __, ___) =>
                             const Icon(Icons.broken_image, size: 80),
                       ),
                     ),
                   ),
+                  // text box for title plus ome space above it
                   const SizedBox(height: 20),
                   Text(
-                    safeTitle,
+                    title,
                     style: const TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  // text box for description plus some space above it
                   const SizedBox(height: 12),
-                  Text(safeDescription, style: const TextStyle(fontSize: 16)),
+                  Text(description, style: const TextStyle(fontSize: 16)),
                 ],
               ),
             );
@@ -57,8 +68,10 @@ class DetailScreen extends StatelessWidget {
           // this is the layout for landscape mode, with image on left and descriptionand text on right
           return Padding(
             padding: const EdgeInsets.all(12),
+            // creates horizonatal layout
             child: Row(
               children: [
+                // first item is for the image which will appear on the left side
                 Expanded(
                   flex: 1,
                   child: Center(
@@ -73,25 +86,24 @@ class DetailScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                // second is for the text boxes that will appear towards the right side
                 Expanded(
                   flex: 1,
                   child: SingleChildScrollView(
                     padding: const EdgeInsets.all(12),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      // contains 2 text boxes styled differently
                       children: [
                         Text(
-                          safeTitle,
+                          title,
                           style: const TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         const SizedBox(height: 12),
-                        Text(
-                          safeDescription,
-                          style: const TextStyle(fontSize: 16),
-                        ),
+                        Text(description, style: const TextStyle(fontSize: 16)),
                       ],
                     ),
                   ),

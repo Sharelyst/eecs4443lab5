@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // basic styling for the app
     return MaterialApp(
       title: 'EECS 4443 Lab 5',
       theme: ThemeData(
