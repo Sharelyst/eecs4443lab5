@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'item_model.dart';
 
-/// Detail screen that shows a full-size image, title, and description
-/// for the selected [Item].
-///
-/// The [Item] is passed via the constructor when navigating with Navigator.push.
 class DetailScreen extends StatelessWidget {
   final Item item;
 
@@ -12,60 +8,98 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Fallback text for missing data (basic error handling).
-    final String safeTitle = item.title.trim().isEmpty
-        ? 'No title available'
-        : item.title;
-    final String safeDescription = item.description.trim().isEmpty
-        ? 'No description available for this item.'
+    final safeTitle = item.title.isEmpty ? "No title available" : item.title;
+    final safeDescription = item.description.isEmpty
+        ? "No description available."
         : item.description;
 
     return Scaffold(
-      appBar: AppBar(
-        // Show a safe title in the AppBar.
-        title: Text(safeTitle, overflow: TextOverflow.ellipsis),
-      ),
-      // SingleChildScrollView ensures that long content can scroll.
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Responsive image area: AspectRatio keeps the image height reasonable
-            // in both portrait and landscape orientations.
-            AspectRatio(
-              aspectRatio: 4 / 3,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.network(
-                  item.imageUrl,
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) {
-                    // Placeholder if network image fails to load.
-                    return Container(
-                      color: Colors.grey[300],
-                      alignment: Alignment.center,
-                      child: const Icon(Icons.broken_image, size: 48),
-                    );
-                  },
-                ),
+      appBar: AppBar(title: Text(safeTitle, overflow: TextOverflow.ellipsis)),
+
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          final bool isLandscape = constraints.maxWidth > constraints.maxHeight;
+
+          if (!isLandscape) {
+            return SingleChildScrollView(
+              padding: const EdgeInsets.all(12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(0),
+                      child: Image.network(
+                        item.imageUrl ?? "",
+                        width: constraints.maxWidth * 0.9,
+                        height: constraints.maxWidth * 0.9,
+                        fit: BoxFit.contain,
+                        errorBuilder: (_, __, ___) =>
+                            const Icon(Icons.broken_image, size: 80),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Text(
+                    safeTitle,
+                    style: const TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  Text(safeDescription, style: const TextStyle(fontSize: 16)),
+                ],
               ),
+            );
+          }
+
+          // this is the layout for landscape mode, with image on left and descriptionand text on right
+          return Padding(
+            padding: const EdgeInsets.all(12),
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Center(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(0),
+                      child: Image.network(
+                        item.imageUrl ?? "",
+                        fit: BoxFit.contain,
+                        errorBuilder: (_, __, ___) =>
+                            const Icon(Icons.broken_image, size: 80),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.all(12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          safeTitle,
+                          style: const TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                        Text(
+                          safeDescription,
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(height: 16),
-            Text(
-              safeTitle,
-              style: Theme.of(
-                context,
-              ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 12),
-            Text(
-              safeDescription,
-              style: Theme.of(context).textTheme.bodyLarge,
-              textAlign: TextAlign.left,
-            ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }

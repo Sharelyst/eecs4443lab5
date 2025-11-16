@@ -16,20 +16,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'EECS 4443 Lab 5',
-      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // Basic theming for consistent styles.
         primarySwatch: Colors.indigo,
         scaffoldBackgroundColor: Colors.grey[100],
         cardTheme: CardThemeData(
           elevation: 3,
-          margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
+          margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
         ),
       ),
-      // Initial screen is the main list screen.
       home: ListScreen(items: sampleItems),
     );
   }

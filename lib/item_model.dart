@@ -1,128 +1,112 @@
-/// Data model for a single item in the list and detail screens.
 class Item {
   final String title;
   final String imageUrl;
   final String description;
-  final String summary; // brief summary used only on the list screen
+  final String summary;
 
   const Item({
-    required this.title,
-    required this.imageUrl,
-    required this.description,
-    required this.summary,
+    this.title = "",
+    this.imageUrl = "",
+    this.description = "",
+    this.summary = "",
   });
 }
 
-/// Hardcoded list of at least 15 items.
-/// These can represent anything (e.g., places, books, courses, etc.).
-const List<Item> sampleItems = [
+final List<Item> sampleItems = [
   Item(
-    title: 'Banana',
-    imageUrl: 'https://picsum.photos/seed/flutter1/400/300',
-    summary: 'Eat a Banana',
-    description:
-        'Just a Banana, nothing else.',
+    title: "Banana",
+    imageUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banana-Single.jpg/1162px-Banana-Single.jpg",
+    description: "Just a Banana, nothing else.",
+    summary: "Banana summary",
   ),
   Item(
-    title: 'Apple',
-    imageUrl: 'https://picsum.photos/seed/state2/400/300',
-    summary: 'Eat a Apple',
-    description:
-        'Just an apple, nothing else.',
+    title: "Apple",
+    imageUrl:
+        "https://media.istockphoto.com/id/184276818/photo/red-apple.jpg?s=612x612&w=0&k=20&c=NvO-bLsG0DJ_7Ii8SSVoKLurzjmV0Qi4eGfn6nW3l5w=",
+    description: "Just an apple, nothing else.",
+    summary: "Apple summary",
   ),
   Item(
-    title: 'Orange',
-    imageUrl: 'https://picsum.photos/seed/nav3/400/300',
-    summary: 'Eat a Orange',
-    description:
-        'Just an Orange, nothing else.',
+    title: "Orange",
+    imageUrl:
+        "https://media.istockphoto.com/id/185284489/photo/orange.jpg?s=612x612&w=0&k=20&c=m4EXknC74i2aYWCbjxbzZ6EtRaJkdSJNtekh4m1PspE=",
+    description: "Just an Orange, nothing else.",
+    summary: "Orange summary",
   ),
   Item(
-    title: 'Pineapple',
-    imageUrl: 'https://picsum.photos/seed/list4/400/300',
-    summary: 'Eat a Pineapple',
-    description:
-        'Just a Pineapple, nothing else.',
+    title: "Pineapple",
+    imageUrl:
+        "https://media.istockphoto.com/id/452352231/photo/pineapple.jpg?s=612x612&w=0&k=20&c=BioDwSdBPMlCpc56389y9JUsAJFGXkk5gr14R4hxikY=",
+    description: "Just a Pineapple, nothing else.",
+    summary: "Pineapple summary",
   ),
   Item(
-    title: 'Tomato',
-    imageUrl: 'https://picsum.photos/seed/card5/400/300',
-    summary: 'Eat a Tomato',
+    title: "Tomato",
+    imageUrl:
+        "https://media.istockphoto.com/id/847335116/photo/tomatoes-on-the-vine.jpg?s=612x612&w=0&k=20&c=XspM2ySvUfqjnt7HL5qKyn0tyRb5qLsf1GAP6-3xQsw=",
     description:
-        'Testing long strings: Just a tomato, nothing else. Just a tomato, nothing else. Just a tomato, nothing else. Just a tomato, nothing else. Just a tomato, nothing else. Just a tomato, nothing else. Just a tomato, nothing else. Just a tomato, nothing else. Just a tomato, nothing else. Just a tomato, nothing else.',
+        "Testing long strings: Just a tomato, nothing else. Just a tomato, nothing else. "
+        "Just a tomato, nothing else. Just a tomato, nothing else. Just a tomato, nothing else. "
+        "Just a tomato, nothing else. Just a tomato, nothing else. Just a tomato, nothing else. "
+        "Just a tomato, nothing else. Just a tomato, nothing else.",
+    summary: "Tomato summary",
   ),
   Item(
-    title: 'Something',
-    imageUrl: 'https://picsum.photos/seed/image6/400/300',
-    summary: 'Something we need for everyday live',
-    description:
-        'Out of ideas already.',
+    title: "Something",
+    imageUrl:
+        "https://www.shutterstock.com/image-vector/modern-handwritten-brush-calligraphy-something-260nw-1782692663.jpg",
+    description: "Out of ideas already.",
+    summary: "Something summary",
   ),
   Item(
-    title: 'Pencils',
-    imageUrl: 'https://picsum.photos/seed/responsive7/400/300',
-    summary: 'Need Pencils to write on paper',
+    title: "Pencils",
     description:
-        'why is there an image of a pencil here you ask? Well, first of all, there is not, and secondly, I dont know.',
+        "Why is there an image of a pencil here you ask? Well, there isn't",
+    summary: "Pencils summary",
   ),
   Item(
-    title: 'Sky',
-    imageUrl: 'https://picsum.photos/seed/theme8/400/300',
-    summary: 'The Sky is so nice to see',
-    description:
-        'Blue sky.',
+    title: "Sky",
+    imageUrl:
+        "https://images.pexels.com/photos/53594/blue-clouds-day-fluffy-53594.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    description: "Blue sky.",
+    summary: "Sky summary",
   ),
   Item(
-    title: 'Clouds',
-    imageUrl: 'https://picsum.photos/seed/gestures9/400/300',
-    summary: 'A wonderful sight to see Clouds',
+    title: "Clouds",
     description:
-        'This cloud is very cool (just imagine there is a cloud here and not a placeholder image).',
+        "This cloud is very cool (just imagine there is a cloud here and not a placeholder image).",
+    summary: "Clouds summary",
   ),
   Item(
-    title: 'Grass',
-    imageUrl: 'https://picsum.photos/seed/forms10/400/300',
-    summary: 'Grass is green',
-    description:
-        'Please touch some grass...',
+    title: "Grass",
+    imageUrl:
+        "https://media.istockphoto.com/id/515011742/photo/close-up-of-fresh-thick-grass-with-water-drops.jpg?s=612x612&w=0&k=20&c=6sjw9lrB-0h_BgnSs6UeU1a9GMuBQkaQn-H_J4I8xCU=",
+    description: "Please touch some grass...",
+    summary: "Grass summary",
   ),
   Item(
-    title: 'River',
-    imageUrl: 'https://picsum.photos/seed/network11/400/300',
-    summary: 'River provides water',
-    description:
-        'river....',
+    title: "River",
+    imageUrl:
+        "https://images.pexels.com/photos/2438/nature-forest-waves-trees.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    description: "river....",
+    summary: "River summary",
   ),
   Item(
-    title: 'Grapes',
-    imageUrl: 'https://picsum.photos/seed/perf12/400/300',
-    summary: 'Grapes to eat',
-    description:
-        'I guess we going back to fruits now.',
+    title: "Grapes",
+    imageUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSesv836ZjZTMgiLVjdScLaHoG1NWvumZJ6Aw&s",
+    description: "I guess we going back to fruits now.",
+    summary: "Grapes summary",
   ),
   Item(
-    title: 'Mango',
-    imageUrl: 'https://picsum.photos/seed/access13/400/300',
-    summary: 'Mango to eat',
-    description:
-        'Best fruit after lemons.',
+    title: "Mango",
+    imageUrl:
+        "https://media.istockphoto.com/id/980812590/photo/fresh-raw-mangoes.jpg?s=612x612&w=0&k=20&c=cMyKeUk3tv0r295jMTZiWLCZ_WAAsajJqR9cnafq7PA=",
+    description: "Best fruit after lemons.",
+    summary: "Mango summary",
   ),
-  Item(
-    title: 'Animations',
-    imageUrl: 'https://picsum.photos/seed/anim14/400/300',
-    summary: 'Add subtle motion to improve user experience.',
-    description:
-        'Animations can guide user attention and make your app feel more polished. Flutter offers '
-        'implicit animations like AnimatedContainer as well as explicit animations using AnimationController '
-        'and Tween, providing fine-grained control.',
-  ),
-  Item(
-    title: 'Testing Flutter Apps',
-    imageUrl: 'https://picsum.photos/seed/test15/400/300',
-    summary: 'Write widget tests to keep your UI reliable.',
-    description:
-        'Testing in Flutter includes unit tests, widget tests, and integration tests. '
-        'Widget tests help you ensure that your UI behaves as expected when given specific inputs, '
-        'improving reliability as your codebase grows.',
-  ),
+
+  Item(imageUrl: "https://scx2.b-cdn.net/gfx/news/2017/theoreticala.jpg"),
+  Item(),
 ];
