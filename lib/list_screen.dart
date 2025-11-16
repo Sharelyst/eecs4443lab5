@@ -69,8 +69,10 @@ class ItemCard extends StatelessWidget {
             width: 60,
             height: 60,
             fit: BoxFit.contain,
-            errorBuilder: (_, __, ___) =>
-                const Icon(Icons.broken_image_rounded, size: 60),
+            errorBuilder: (_, __, ___) => const Padding(
+              padding: EdgeInsets.all(10),
+              child: Icon(Icons.broken_image_rounded, size: 40),
+            ),
           ),
         ),
         title: Text(title, maxLines: 1, overflow: TextOverflow.ellipsis),
