@@ -52,12 +52,10 @@ class ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // handle null or empty values, of not then assign the values that have been passed to the relevant variables
-    final title = (item.title?.isEmpty ?? true)
-        ? "No title available"
-        : item.title!;
-    final summary = (item.summary?.isEmpty ?? true)
+    final title = item.title.isEmpty ? "No title available" : item.title;
+    final summary = item.summary.isEmpty
         ? "No summary available."
-        : item.summary!;
+        : item.summary;
 
     // once variables have been assigned, return the ui to display the item card
     // contains basic styling to make it more visually appealing
@@ -80,7 +78,7 @@ class ItemCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(0),
           // load the image from network
           child: Image.network(
-            item.imageUrl ?? "",
+            item.imageUrl,
             width: 60,
             height: 60,
             fit: BoxFit.contain,

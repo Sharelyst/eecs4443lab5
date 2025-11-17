@@ -48,7 +48,7 @@ class DetailScreen extends StatelessWidget {
                             return ClipRRect(
                               borderRadius: BorderRadius.circular(0),
                               child: Image.network(
-                                item.imageUrl ?? "",
+                                item.imageUrl,
                                 width: imgSize,
                                 height: imgSize,
                                 // display the entire image
@@ -93,7 +93,7 @@ class DetailScreen extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(0),
                       child: Image.network(
-                        item.imageUrl ?? "",
+                        item.imageUrl,
                         fit: BoxFit.contain,
                         errorBuilder: (_, __, ___) =>
                             const Icon(Icons.broken_image, size: 80),
