@@ -26,41 +26,56 @@ class DetailScreen extends StatelessWidget {
 
           // if portrait then display items in vertical list or column
           if (!isLandscape) {
-            // can scroll if too much content
-            return SingleChildScrollView(
-              padding: const EdgeInsets.all(12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Center(
-                    // create the box to store the image
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(0),
-                      // fetch image from network
-                      child: Image.network(
-                        item.imageUrl ?? "",
-                        width: constraints.maxWidth * 0.9,
-                        height: constraints.maxWidth * 0.9,
-                        fit: BoxFit.contain,
-                        // handle null images
-                        errorBuilder: (_, __, ___) =>
-                            const Icon(Icons.broken_image, size: 80),
+            return Center(
+              // displays in contrained box so the size of the image can be restricted
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 400),
+                // can scroll if too much content
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.all(12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Center(
+                        // layout for image
+                        child: LayoutBuilder(
+                          builder: (context, innerConstraints) {
+                            // make the img max width to be 90% of its parent box
+                            final double imgSize =
+                                innerConstraints.maxWidth * 0.9;
+
+                            // image
+                            return ClipRRect(
+                              borderRadius: BorderRadius.circular(0),
+                              child: Image.network(
+                                item.imageUrl ?? "",
+                                width: imgSize,
+                                height: imgSize,
+                                // display the entire image
+                                fit: BoxFit.contain,
+                                // handle null image
+                                errorBuilder: (_, __, ___) =>
+                                    const Icon(Icons.broken_image, size: 80),
+                              ),
+                            );
+                          },
+                        ),
                       ),
-                    ),
+                      // text box for title plus ome space above it
+                      const SizedBox(height: 20),
+                      Text(
+                        title,
+                        style: const TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      // text box for description plus some space above it
+                      const SizedBox(height: 12),
+                      Text(description, style: const TextStyle(fontSize: 16)),
+                    ],
                   ),
-                  // text box for title plus ome space above it
-                  const SizedBox(height: 20),
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  // text box for description plus some space above it
-                  const SizedBox(height: 12),
-                  Text(description, style: const TextStyle(fontSize: 16)),
-                ],
+                ),
               ),
             );
           }
